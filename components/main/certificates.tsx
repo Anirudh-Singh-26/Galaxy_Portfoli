@@ -1,10 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
 export const Certificates = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 640); // Tailwind "sm"
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 3);
+  };
+
+  // Decide how many to show
+  const displayedCertificates = isMobile
+    ? certificates.slice(0, visibleCount)
+    : certificates;
 
   return (
     <section
@@ -13,26 +32,24 @@ export const Certificates = () => {
     >
       {/* Section Heading */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
           <span className="bg-gradient-to-t from-slate-200 via-cyan-700 to-cyan-950 bg-clip-text text-transparent">
             Certificates & Achievements
           </span>
         </h2>
-        <div className="w-[40rem] h-2 relative mx-auto mt-2">
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+        <div className="w-full max-w-[40rem] h-2 relative mx-auto mt-2 ms-10 sm:ms-[5.2rem]">
+          <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
         </div>
       </div>
-      <p className="text-neutral-300 text-center mt-4 text-lg sm:text-xl font-semibold">
+      <p className="text-neutral-300 text-center mt-4 text-base sm:text-lg lg:text-xl font-semibold max-w-full sm:max-w-[600px] mx-auto">
         A collection of milestones and recognitions that reflect dedication,
         growth, and continuous learning.
       </p>
 
       {/* BentoGrid Layout */}
       <BentoGrid className="max-w-7xl w-full gap-6 sm:gap-8 lg:gap-10">
-        {certificates.map((item, i) => (
+        {displayedCertificates.map((item, i) => (
           <BentoGridItem
             key={i}
             title={item.title}
@@ -41,7 +58,7 @@ export const Certificates = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-48 p-2 sm:h-66 md:h-74 object-cover rounded-2xl cursor-pointer"
+                className="w-full h-48 sm:h-52 md:h-56 lg:h-60 object-cover rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105"
                 onClick={() => setSelectedImage(item.image)}
               />
             }
@@ -49,11 +66,23 @@ export const Certificates = () => {
           />
         ))}
 
-        {/* Inline placeholder card */}
-        <div className="flex text-center items-center justify-center rounded-2xl border border-dashed border-cyan-500/40 text-white text-lg font-semibold p-5 cursor-default hover:scale-105 transition-transform duration-300 md:col-span-1">
-          More Certificates Coming Soon →
-        </div>
+        {/* Inline placeholder card (only if all shown) */}
+        {(!isMobile || visibleCount >= certificates.length) && (
+          <div className="text-center flex items-center justify-center rounded-2xl border-2 border-dashed border-cyan-500/40 text-white text-lg sm:text-xl font-semibold p-5 cursor-default hover:scale-105 transition-transform duration-300 md:col-span-1">
+            More Certificates Coming Soon →
+          </div>
+        )}
       </BentoGrid>
+
+      {/* Load More Button (MOBILE ONLY) */}
+      {isMobile && visibleCount < certificates.length && (
+        <button
+          onClick={handleLoadMore}
+          className="mt-6 px-6 py-2 rounded-lg bg-purple-600 text-white font-semibold hover:bg-purple-700 transition sm:hidden"
+        >
+          Load More
+        </button>
+      )}
 
       {/* Popup Modal */}
       {selectedImage && (
@@ -140,5 +169,3 @@ const certificates = [
       "/My_Data/Anirudh Singh Rathore_Node.js Foundations Course (1)_page-0001.jpg",
   },
 ];
-
-

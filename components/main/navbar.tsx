@@ -12,28 +12,28 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#03001427] backdrop-blur-md shadow-lg z-50">
-      <div className="flex items-center justify-between h-[60px] sm:h-[65px] md:h-[70px] px-3 sm:px-5 md:px-8 lg:px-10">
+      <div className="flex items-center justify-between h-[60px] sm:h-[65px] md:h-[70px] px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Logo & Name */}
         <Link
           href="#about-me"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 ms-5 sm:ms-0"
           onClick={closeMenu}
         >
           <Image
             src="/My_Data/rocket.png"
             alt="Logo"
-            width={35}
-            height={35}
+            width={20}
+            height={20}
             draggable={false}
-            className="cursor-pointer sm:w-10 sm:h-10 md:w-[45px] md:h-[45px]"
+            className="cursor-pointer sm:w-10 sm:h-10 md:w-[35px] md:h-[35px]"
           />
-          <span className="hidden sm:block text-white font-bold tracking-wide text-sm md:text-base">
+          <span className="text-white font-bold tracking-wide text-sm md:text-base ps-12 sm:ps-5">
             Anirudh Singh Rathore
           </span>
         </Link>
 
-        {/* Desktop Navigation - Hidden on mobile/tablet */}
-        <div className=" ms-[-2rem] hidden xl:flex items-center gap-6 2xl:gap-8 bg-[rgba(3,0,20,0.37)] px-6 2xl:px-8 py-2 rounded-full text-gray-200">
+        {/* Desktop Navigation */}
+        <div className="hidden xl:flex items-center gap-6 2xl:gap-8 bg-[rgba(3,0,20,0.37)] px-6 2xl:px-8 py-2 rounded-full text-gray-200">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.title}
@@ -45,7 +45,7 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* Social Links (Desktop only) - Hidden on mobile/tablet */}
+        {/* Social Links - Desktop */}
         <div className="hidden xl:flex items-center gap-4 2xl:gap-5">
           {SOCIALS.map(({ link, name, icon: Icon }) => (
             <Link
@@ -60,7 +60,7 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button - Visible on mobile/tablet */}
+        {/* Mobile Menu Button */}
         <button
           className="xl:hidden text-white text-2xl sm:text-3xl flex items-center justify-center p-1"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

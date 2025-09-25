@@ -20,12 +20,12 @@ export const Hero = () => {
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className=" flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-6 md:px-12 lg:px-20 mt-6 md:mt-12 lg:mt-24 w-full z-[20]"
+      className="flex flex-col-reverse md:flex-row items-center justify-center px-4 sm:px-6 md:px-12 lg:px-20 mt-16 md:mt-[7rem] w-full z-[20]"
     >
       {/* Left Content */}
       <motion.div
         variants={staggerItem}
-        className="  ms-8 w-full flex flex-col gap-3 sm:gap-4 lg:gap-5 justify-center m-auto text-center lg:text-start"
+        className="w-full flex flex-col gap-3 sm:gap-4 lg:gap-5 justify-center m-auto text-center md:text-start mt-8"
       >
         {/* Role Box */}
         <motion.div
@@ -34,7 +34,7 @@ export const Hero = () => {
             scale: 1.05,
             boxShadow: "0 10px 20px rgba(180, 155, 255, 0.3)",
           }}
-          className="flex items-center justify-center lg:justify-start gap-2 py-2 sm:py-[6px] px-3 sm:px-[6px] border border-[#7042f88b] opacity-[0.9] rounded-lg max-w-fit mx-auto lg:mx-0 cursor-default"
+          className="flex items-center justify-center mb-5 sm:mb-0 md:justify-start gap-2 py-2 sm:py-[6px] px-3 sm:px-[6px] border border-[#7042f88b] opacity-[0.9] rounded-lg max-w-fit mx-auto md:mx-0 cursor-default"
         >
           <motion.div
             animate={{ rotate: 360 }}
@@ -51,10 +51,10 @@ export const Hero = () => {
           </h1>
         </motion.div>
 
-        {/* Hero Heading with text reveal effect */}
+        {/* Hero Heading */}
         <motion.h1
           variants={slideInFromLeft(0.5)}
-          className=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white max-w-full lg:max-w-[600px] leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white max-w-full md:max-w-[600px] leading-tight"
         >
           <motion.span
             initial={{ opacity: 0, x: -20 }}
@@ -94,28 +94,40 @@ export const Hero = () => {
         {/* Description */}
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-sm sm:text-base lg:text-lg text-gray-400 my-3 sm:my-4 max-w-full sm:max-w-[500px] mx-auto lg:mx-0"
+          className="text-sm sm:text-base lg:text-lg text-gray-400 my-3 sm:my-4 max-w-full md:max-w-[500px] mx-auto md:mx-0"
         >
           I&apos;m a Full Stack Software Engineer specializing in building
           modern web applications. Check out my projects and skills.
         </motion.p>
 
-        {/* Call-to-Action Button */}
-        <motion.a
-          href="#projects"
+        {/* Call-to-Action Buttons */}
+        <motion.div
           variants={slideInFromLeft(1)}
-          {...buttonHover}
-          className=" py-3 sm:py-2 px-6 sm:px-8 bg-transparent border-[#7D43FF] border-2 text-white text-sm sm:text-base font-medium rounded-full shadow-lg w-fit mx-auto lg:mx-0 flex items-center justify-center cursor-pointer"
+          className="flex sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start mt-3"
         >
-          Explore
-        </motion.a>
-        
+          <motion.a
+            href="#projects"
+            {...buttonHover}
+            className="py-3 sm:py-4 px-6 sm:px-8 bg-transparent border-[#7D43FF] border-2 text-white text-sm sm:text-base font-medium rounded-full shadow-lg min-w-[140px] flex items-center justify-center cursor-pointer whitespace-nowrap"
+          >
+            Explore
+          </motion.a>
+
+          <motion.a
+            href="/My_Data/Anirudh_Singh_Rathore_FullStack-Dev.pdf"
+            download
+            {...buttonHover}
+            className="py-3 sm:py-4 px-6 sm:px-8 bg-[#7D43FF] text-white text-sm sm:text-base font-medium rounded-full shadow-lg min-w-[140px] flex items-center justify-center cursor-pointer whitespace-nowrap"
+          >
+            Download CV
+          </motion.a>
+        </motion.div>
       </motion.div>
 
-      {/* Right Side Image with floating animation */}
+      {/* Right Side Image */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full flex justify-center lg:justify-end lg:ml-0 xl:ml-20 2xl:ml-32 items-center mt-6 sm:mt-8 lg:mt-0 mb-8 lg:mb-0"
+        className="w-full flex justify-center md:justify-end items-center mt-8 md:mt-0 hidden md:flex"
       >
         <motion.div variants={floating} animate="animate">
           <Image
@@ -124,7 +136,7 @@ export const Hero = () => {
             height={400}
             width={400}
             draggable={false}
-            className="hidden sm:block select-none drop-shadow-lg w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px] 2xl:w-[500px] 2xl:h-[500px]"
+            className="select-none drop-shadow-lg sm:h-[450px] sm:w-[450px] md:h-[500px] md:w-[500px]"
           />
         </motion.div>
       </motion.div>

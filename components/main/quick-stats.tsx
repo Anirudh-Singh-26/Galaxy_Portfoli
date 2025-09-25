@@ -6,8 +6,6 @@ import {
   slideInFromLeft,
   staggerContainer,
   staggerItem,
-  scaleIn,
-  cardHover,
   viewportSettings,
 } from "@/lib/motion";
 import { FaProjectDiagram, FaLaptopCode, FaUserGraduate } from "react-icons/fa";
@@ -50,7 +48,7 @@ const HighlightCard = ({
         <CardItem
           as={motion.div}
           translateZ={30}
-          className="flex flex-col items-center justify-center gap-3 sm:gap-4 relative z-10 min-h-[120px] sm:min-h-[140px]"
+          className="flex flex-col items-center py-0 justify-center gap-3 sm:gap-4 relative z-10 min-h-[120px] sm:min-h-[140px]"
         >
           <motion.div
             className="p-2 sm:p-3 bg-purple-500/10 rounded-full mt-3"
@@ -113,37 +111,26 @@ export const Highlights = () => {
         variants={slideInFromLeft(0.5)}
         initial="hidden"
         animate="visible"
-        className="text-2xl sm:text-3xl md:text-6xl font-bold text-white text-center pt-8 sm:pt-10"
+        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center pt-8 sm:pt-10"
       >
-        <div className="h-[5rem] w-full  flex flex-col items-center justify-center overflow-hidden rounded-md text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-2 ">
-            <span
-              className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))]
-
-from-gray-900
-via-blue-100
-to-emerald-800
-bg-clip-text
-text-transparent"
-            >
+        <div className="w-full flex flex-col items-center justify-center overflow-hidden rounded-md text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+            <span className="bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-gray-900 via-blue-100 to-emerald-800 bg-clip-text text-transparent">
               My Highlights
             </span>
           </h2>
-          <div className="w-[40rem] h-1 relative">
-            {/* Gradients */}
-            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+          <div className="w-full max-w-[40rem] h-2 relative mx-auto mt-2 ms-10 sm:ms-[5.2rem]">
+            <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+            <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
           </div>
         </div>
-        <p className="text-neutral-300 text-center mt-4 text-lg sm:text-xl font-semibold">
+        <p className="text-neutral-300 text-center mt-4 text-lg sm:text-xl font-semibold max-w-full sm:max-w-[600px] mx-auto">
           Key moments, projects, and accomplishments that define the essence of
           my work and passion.
         </p>
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 w-full max-w-7xl mt-8 sm:mt-10 lg:mt-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 w-full max-w-7xl mt-8 sm:mt-10 lg:mt-12">
         <HighlightCard
           icon={<FaProjectDiagram className="text-purple-400" />}
           title="5+ Real-World Projects"

@@ -39,7 +39,7 @@ export const BentoGridItem = ({
     >
       {/* Image on Top */}
       {header && (
-        <div className="w-full h-48 md:h-56 lg:h-64 overflow-hidden">
+        <div className="w-full h-48 md:h-56  lg:h-64 overflow-hidden">
           {header}
         </div>
       )}

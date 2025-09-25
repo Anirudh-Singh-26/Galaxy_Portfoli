@@ -67,20 +67,32 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
+/* Minimal scrollbar for modern browsers */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px; /* width of vertical scrollbar */
+  height: 6px; /* height of horizontal scrollbar */
 }
+
 ::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: rgba(255, 255, 255, 0.05); /* light track */
+  border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #7d43ff, #00d4ff);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.3); /* thumb color */
+  border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #9f63ff, #33e0ff);
+  background: rgba(255, 255, 255, 0.5); /* hover effect */
 }
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
+}
+
 
 @layer base {
   :root {
@@ -143,6 +155,10 @@ html {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-  }
+  @apply bg-background text-foreground;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
 }
+
+}
+
+

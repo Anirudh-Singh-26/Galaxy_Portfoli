@@ -156,6 +156,34 @@ export const PROJECTS = [
     webapp:
       "https://gear-xpert-client-anirudh-singh-rathores-projects.vercel.app/",
   },
+  {
+    title: "WonderLust – Hotel listing & reviewing",
+    image: "/projects/WonderLust.png",
+    description:
+      "A full-featured hotel listing platform built with Node.js, Express, MongoDB, and EJS. Users can register and log in, create and edit listings, and post reviews on hotels. The app features secure authentication, dynamic content management, and a user-friendly interface for browsing and reviewing hotels.",
+    tags: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "EJS",
+      "Authentication",
+      "CRUD",
+      "User Reviews",
+      "Hotel Listings",
+      "Responsive UI",
+    ],
+    github: "https://github.com/Anirudh-Singh-26/Hotel-Listing",
+    webapp: "https://hotel-listing-fhib.onrender.com/listings",
+  },
+  {
+    title: "Grocery App 🛒",
+    image: "/projects/Grocery-app.png",
+    description:
+      "⚠️ Currently Under ACTIVE DEVELOPMENT — A responsive grocery management app built with the MERN stack — features and functionality are being implemented. Stay tuned for updates!",
+    tags: ["Node.js", "Express.js", "MongoDB", "React", "Responsive UI"],
+    github: "",
+    webapp: "",
+  },
 ];
 
 

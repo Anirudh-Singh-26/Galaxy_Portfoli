@@ -2,19 +2,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  staggerContainer,
-  staggerItem,
-  progressBar,
-  viewportSettings,
-} from "@/lib/motion";
+import { staggerContainer, staggerItem, viewportSettings } from "@/lib/motion";
 
 export const Journey: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  
-
 
   return (
     <>
@@ -23,7 +16,7 @@ export const Journey: React.FC = () => {
         initial="hidden"
         whileInView="visible"
         viewport={viewportSettings}
-        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-16"
+        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 lg:py-20"
         id="journey"
       >
         {/* Section heading */}
@@ -31,21 +24,19 @@ export const Journey: React.FC = () => {
           variants={staggerItem}
           className="relative z-10 text-center mb-12"
         >
-          <div className="h-[5rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1">
+          <div className="w-full flex flex-col items-center justify-center overflow-hidden rounded-md text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+              {" "}
               <span className="bg-gradient-to-t from-slate-100 via-cyan-600 to-cyan-950 bg-clip-text text-transparent">
                 My Journey
               </span>
             </h2>
-            <div className="w-[40rem] h-10 relative">
-              {/* Gradients */}
-              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+            <div className="w-full max-w-[40rem] h-2 relative mx-auto mt-2 ms-10 sm:ms-[14.5rem]">
+              <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+              <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
             </div>
           </div>
-          <p className="text-neutral-300 text-center mt-4 text-lg sm:text-xl font-semibold">
+          <p className="text-neutral-300 text-center mt-4 text-base sm:text-lg lg:text-xl font-semibold max-w-full sm:max-w-[600px] mx-auto">
             Tracing the path of challenges, experiences, and learnings that
             shaped who I am today.
           </p>
@@ -54,16 +45,16 @@ export const Journey: React.FC = () => {
         {/* Timeline container */}
         <motion.div
           variants={staggerContainer}
-          className="relative z-10 space-y-24"
+          className="relative z-10 space-y-12 sm:space-y-16"
         >
-          {/* === Entry 1: Xebia Internship (Content left | Image right) === */}
+          {/* Entry 1 */}
           <motion.div
             variants={staggerItem}
-            className="flex flex-col sm:flex-row items-stretch gap-8 sm:gap-12 relative"
+            className="flex flex-col sm:flex-row items-stretch gap-6 sm:gap-10 relative"
           >
             {/* Content */}
             <motion.div
-              className="w-full sm:flex-1 backdrop-blur-sm border border-purple-400/10 rounded-2xl p-5 sm:p-6 shadow-lg flex flex-col order-2 sm:order-1"
+              className="w-full sm:flex-1 backdrop-blur-sm border border-purple-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col order-2 sm:order-1"
               whileHover={{
                 scale: 1.015,
                 boxShadow: "0 12px 28px rgba(168,85,247,0.18)",
@@ -78,15 +69,13 @@ export const Journey: React.FC = () => {
                   Professional
                 </span>
               </div>
-
               <div className="mb-3">
                 <p className="text-purple-300 font-semibold">Xebia</p>
                 <p className="text-slate-400 text-sm">
                   June 1, 2025 – July 12, 2025
                 </p>
               </div>
-
-              <ul className="mt-5 space-y-3 flex-1">
+              <ul className="mt-5 space-y-2 sm:space-y-3 flex-1">
                 {[
                   "Built and optimized fullstack applications with modern frameworks",
                   "Collaborated remotely with distributed teams using Git workflows",
@@ -101,7 +90,6 @@ export const Journey: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
               <p className="mt-4 text-slate-400 text-sm italic">
                 Certified internship covering modern web frameworks & real-world
                 projects.
@@ -129,17 +117,17 @@ export const Journey: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* === Entry 2: Degree (Image left | Content right) === */}
+          {/* Entry 2 */}
           <motion.div
             variants={staggerItem}
-            className="flex flex-col sm:flex-row items-stretch gap-8 sm:gap-12 relative"
+            className="flex flex-col sm:flex-row items-stretch gap-6 sm:gap-10 relative"
           >
             {/* Image */}
             <motion.div
               className="w-full sm:w-1/3 rounded-xl overflow-hidden border border-cyan-400/20 shadow-md flex-shrink-0 cursor-pointer"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.25 }}
-              onClick={() => setSelectedImage("/certificates/deeegr.jpg")}
+              onClick={() => setSelectedImage("/My_Data/Uni_logo.jpg")}
             >
               <Image
                 src="/My_Data/Uni_logo.jpg"
@@ -152,7 +140,7 @@ export const Journey: React.FC = () => {
 
             {/* Content */}
             <motion.div
-              className="w-full sm:flex-1 backdrop-blur-sm border border-cyan-400/10 rounded-2xl p-5 sm:p-6 shadow-lg flex flex-col"
+              className="w-full sm:flex-1 backdrop-blur-sm border border-cyan-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col"
               whileHover={{
                 scale: 1.015,
                 boxShadow: "0 12px 28px rgba(6,182,212,0.15)",
@@ -167,13 +155,11 @@ export const Journey: React.FC = () => {
                   Education
                 </span>
               </div>
-
               <div className="mb-3">
                 <p className="text-cyan-300 font-semibold">JECRC University</p>
                 <p className="text-slate-400 text-sm">Aug 2022 – Jul 2026</p>
               </div>
-
-              <ul className="mt-5 space-y-3 flex-1">
+              <ul className="mt-5 space-y-2 sm:space-y-3 flex-1">
                 {[
                   "Focused on full-stack development and cloud computing",
                   "Studied algorithms, data structures and system design",
@@ -188,7 +174,6 @@ export const Journey: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
               <p className="mt-4 text-slate-400 text-sm">
                 Comprehensive study of CS fundamentals, engineering practices
                 and modern web stacks.
@@ -198,7 +183,7 @@ export const Journey: React.FC = () => {
         </motion.div>
       </motion.section>
 
-      {/* ==== PDF Modal ==== */}
+      {/* Modal */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
