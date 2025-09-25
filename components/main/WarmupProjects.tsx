@@ -5,7 +5,7 @@ import axios from "axios";
 
 const projectUrls = [
   "https://hotel-listing-fhib.onrender.com/listings",
-//   "https://gear-xpert-client-anirudh-singh-rathores-projects.vercel.app/",
+  "https://gear-xpert-client-smoky.vercel.app/",
   "https://crowdspark-frontend-gamma.vercel.app/",
   "https://velora-frontend-seven.vercel.app/",
   "https://mavix-frontend.vercel.app/",

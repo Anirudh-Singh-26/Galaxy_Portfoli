@@ -151,10 +151,9 @@ export const PROJECTS = [
     image: "/projects/GearXpert-find-your-Desired-auto-parts.png",
     description:
       "A responsive auto parts marketplace connecting buyers and sellers, with advanced search, filters, and a secure checkout system.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    tags: ["React", "Tailwind CSS"],
     github: "https://github.com/Anirudh-Singh-26/GearXpert-Client",
-    webapp:
-      "https://gear-xpert-client-anirudh-singh-rathores-projects.vercel.app/",
+    webapp: "https://gear-xpert-client-smoky.vercel.app/",
   },
   {
     title: "WonderLust – Hotel listing & reviewing",
