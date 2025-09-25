@@ -60,7 +60,7 @@ export const Hero = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="bg-gradient-to-t from-neutral-200 via-slate-400 to-gray-800 bg-clip-text text-transparent"
+            className="bg-white bg-clip-text text-transparent"
           >
             Transforming{" "}
           </motion.span>
@@ -76,13 +76,13 @@ export const Hero = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="bg-gradient-to-t from-neutral-200 via-slate-400 to-gray-800 bg-clip-text text-transparent"
+            className="bg-white bg-clip-text text-transparent"
           >
             {" "}
             into Seamless User{" "}
           </motion.span>
           <motion.span
-            className="bg-gradient-to-t from-neutral-200 via-slate-400 to-gray-800 bg-clip-text text-transparent"
+            className="bg-white bg-clip-text text-transparent"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
@@ -94,7 +94,7 @@ export const Hero = () => {
         {/* Description */}
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-sm sm:text-base lg:text-lg text-gray-400 my-3 sm:my-4 max-w-full md:max-w-[500px] mx-auto md:mx-0"
+          className="text-sm px-5 sm:text-base lg:text-lg text-gray-400 my-3 sm:my-4 max-w-full md:max-w-[500px] mx-auto md:mx-0"
         >
           I&apos;m a Full Stack Software Engineer specializing in building
           modern web applications. Check out my projects and skills.
@@ -114,8 +114,10 @@ export const Hero = () => {
           </motion.a>
 
           <motion.a
-            href="/My_Data/Anirudh_Singh_Rathore_FullStack-Dev.pdf"
-            download
+            // href="/My_Data/Anirudh_Singh_Rathore_FullStack-Dev.pdf"
+            href="https://drive.google.com/file/d/1olno8YmJ1SPUtX733ljCkm2Zc4Y7_ah7/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             {...buttonHover}
             className="py-3 sm:py-4 px-6 sm:px-8 bg-[#7D43FF] text-white text-sm sm:text-base font-medium rounded-full shadow-lg min-w-[140px] flex items-center justify-center cursor-pointer whitespace-nowrap"
           >
