@@ -30,12 +30,15 @@ export const Projects = () => {
     : PROJECTS;
 
   return (
-    <section id="projects" className="pt-6 pb-24 px-4 sm:px-6 md:px-10 lg:px-20 font-sans relative">
+    <section
+      id="projects"
+      className="pt-6 pb-24 px-4 sm:px-6 md:px-10 lg:px-20 font-sans relative"
+    >
       {/* Section Heading */}
       <div className="text-center mb-16 max-w-3xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-          <span className="bg-gradient-to-t from-slate-200 via-cyan-700 to-cyan-950 bg-clip-text text-transparent">
-            Projects & Achievements
+        <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+          <span className="bg-gradient-to-b from-cyan-950 via-cyan-700 to-slate-200 bg-clip-text text-transparent">
+            Projects
           </span>
         </h2>
         <div className="w-full max-w-[50rem] h-2 relative mx-auto mt-2 ms-10 sm:ms-[5.2rem]">

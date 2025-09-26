@@ -17,6 +17,8 @@ interface CardProps {
   description: string;
   delay: number;
   color: string;
+  mobileTitle: string;
+  mobileValue: string;
 }
 
 const HighlightCard = ({
@@ -25,18 +27,20 @@ const HighlightCard = ({
   description,
   delay,
   color,
+  mobileTitle,
+  mobileValue,
 }: CardProps) => (
   <motion.div
     variants={staggerItem}
     whileHover={{
-      y: -10,
-      boxShadow: `0 20px 40px ${color}20`,
+      y: -6,
+      boxShadow: `0 12px 24px ${color}20`,
     }}
     transition={{ duration: 0.3 }}
     className="w-full"
   >
     <CardContainer className="w-full">
-      <CardBody className="border border-purple-500/30 rounded-2xl p-4 sm:p-5 lg:p-6 shadow-lg w-full h-full backdrop-blur-sm relative overflow-hidden group">
+      <CardBody className="border border-purple-500/30 rounded-xl p-2 sm:p-5 lg:p-6 shadow-md w-full h-full backdrop-blur-sm relative overflow-hidden group text-center">
         {/* Background gradient on hover */}
         <motion.div
           className={`absolute inset-0 bg-gradient-to-br from-${color}-500/10 to-transparent`}
@@ -45,24 +49,36 @@ const HighlightCard = ({
           transition={{ duration: 0.3 }}
         />
 
+        {/* ✅ Compact mobile card (symmetrical + equal height) */}
+        <div className="flex sm:hidden flex-col items-center justify-center gap-1 px-2 py-4 rounded-lg min-h-[110px]">
+          <div className="flex items-center justify-center w-10 h-10 bg-purple-500/10 rounded-full mb-2">
+            <div className="text-lg text-white">{icon}</div>
+          </div>
+          <div className="text-xs font-medium text-gray-300">{mobileTitle}</div>
+          <div className="text-sm font-semibold text-white">{mobileValue}</div>
+        </div>
+
+        {/* ✅ Detailed desktop/tablet card */}
         <CardItem
           as={motion.div}
           translateZ={30}
-          className="flex flex-col items-center py-0 justify-center gap-3 sm:gap-4 relative z-10 min-h-[120px] sm:min-h-[140px]"
+          className="hidden sm:flex flex-col items-center justify-center gap-3 sm:gap-4 relative z-10"
         >
+          {/* Logo */}
           <motion.div
-            className="p-2 sm:p-3 bg-purple-500/10 rounded-full mt-3"
+            className="p-2 sm:p-3 bg-purple-500/10 rounded-full"
             whileHover={{
               scale: 1.1,
               rotate: 360,
             }}
             transition={{ duration: 0.5 }}
           >
-            <div className="text-2xl sm:text-3xl lg:text-5xl">{icon}</div>
+            <div className="text-xl sm:text-3xl lg:text-5xl">{icon}</div>
           </motion.div>
 
+          {/* Title */}
           <motion.h3
-            className="text-base sm:text-lg lg:text-xl font-semibold text-white text-center px-2 mt-7 mb-4"
+            className="text-xs sm:text-lg lg:text-xl font-semibold text-white text-center"
             whileHover={{
               scale: 1.05,
               color: color === "purple" ? "#a855f7" : "#06b6d4",
@@ -72,26 +88,15 @@ const HighlightCard = ({
             {title}
           </motion.h3>
 
+          {/* Description */}
           <motion.p
-            className="text-gray-400 text-xs sm:text-sm text-center px-2 leading-relaxed"
+            className="text-gray-400 text-sm text-center leading-relaxed"
             whileHover={{ color: "#d1d5db" }}
             transition={{ duration: 0.2 }}
           >
             {description}
           </motion.p>
         </CardItem>
-
-        {/* Animated border */}
-        <motion.div
-          className="absolute inset-0 rounded-2xl border-2 border-transparent"
-          whileHover={{
-            borderColor: color === "purple" ? "#a855f7" : "#06b6d4",
-            boxShadow: `0 0 20px ${
-              color === "purple" ? "#a855f7" : "#06b6d4"
-            }40`,
-          }}
-          transition={{ duration: 0.3 }}
-        />
       </CardBody>
     </CardContainer>
   </motion.div>
@@ -105,7 +110,7 @@ export const Highlights = () => {
       initial="hidden"
       whileInView="visible"
       viewport={viewportSettings}
-      className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-20 pt-12 sm:pt-16 lg:pt-20"
+      className="flex flex-col items-center justify-center px-2 sm:px-6 md:px-12 lg:px-20 pt-12 sm:pt-16 lg:pt-20"
     >
       <motion.h2
         variants={slideInFromLeft(0.5)}
@@ -119,7 +124,7 @@ export const Highlights = () => {
               My Highlights
             </span>
           </h2>
-          <div className="w-full max-w-[40rem] h-2 relative mx-auto mt-2 ms-10 sm:ms-[5.2rem]">
+          <div className="w-full max-w-[40rem] h-2 relative mx-auto ms-10 sm:ms-[5.2rem]">
             <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
             <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
           </div>
@@ -130,27 +135,34 @@ export const Highlights = () => {
         </p>
       </motion.h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 w-full max-w-7xl mt-8 sm:mt-10 lg:mt-12">
+      {/* ✅ Always 3 columns */}
+      <div className="text-center grid grid-cols-3 gap-3 sm:gap-6 w-full max-w-7xl mt-6 sm:mt-10 lg:mt-12">
         <HighlightCard
           icon={<FaProjectDiagram className="text-purple-400" />}
-          title="5+ Real-World Projects"
+          title="Projects"
           description="Designed and deployed full-stack apps using modern frameworks, APIs, and databases."
           delay={0.1}
           color="purple"
+          mobileTitle="Completed"
+          mobileValue="10+ Projects"
         />
         <HighlightCard
           icon={<FaLaptopCode className="text-cyan-400" />}
-          title="Industry Internship"
-          description="Worked remotely at Xebia (2024), contributing to scalable, production-ready solutions."
+          title="Internship"
+          description="Worked remotely at Xebia (2025), contributing to scalable, production-ready solutions."
           delay={0.3}
           color="cyan"
+          mobileTitle="Support"
+          mobileValue="Online 24/7"
         />
         <HighlightCard
           icon={<FaUserGraduate className="text-purple-400" />}
-          title="1+ Year of Experience"
+          title="Experience"
           description="Hands-on coding, problem-solving, and building impactful projects with clean practices."
           delay={0.5}
           color="purple"
+          mobileTitle="Experience"
+          mobileValue=" &nbsp;&nbsp;1+&nbsp;&nbsp; Years"
         />
       </div>
     </motion.section>

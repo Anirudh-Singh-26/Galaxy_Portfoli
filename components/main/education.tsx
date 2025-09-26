@@ -26,12 +26,11 @@ export const Journey: React.FC = () => {
         >
           <div className="w-full flex flex-col items-center justify-center overflow-hidden rounded-md text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-              {" "}
               <span className="bg-gradient-to-t from-slate-100 via-cyan-600 to-cyan-950 bg-clip-text text-transparent">
                 My Journey
               </span>
             </h2>
-            <div className="w-full max-w-[40rem] h-2 relative mx-auto mt-2 ms-10 sm:ms-[14.5rem]">
+            <div className="w-full max-w-[40rem] h-2 relative mx-auto ms-[2rem] sm:ms-[14.5rem]">
               <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
               <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
             </div>
@@ -54,12 +53,17 @@ export const Journey: React.FC = () => {
           >
             {/* Content */}
             <motion.div
-              className="w-full sm:flex-1 backdrop-blur-sm border border-purple-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col order-2 sm:order-1"
+              className="w-full sm:flex-1 backdrop-blur-sm border border-purple-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col order-2 sm:order-1 cursor-pointer"
               whileHover={{
                 scale: 1.015,
                 boxShadow: "0 12px 28px rgba(168,85,247,0.18)",
               }}
               transition={{ duration: 0.3 }}
+              onClick={() =>
+                setSelectedImage(
+                  "/My_Data/Anirudh_Xebia_Internship_page-0001.jpg"
+                )
+              }
             >
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-lg sm:text-2xl font-semibold text-white">
@@ -96,17 +100,8 @@ export const Journey: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Image */}
-            <motion.div
-              className="w-full sm:w-1/3 rounded-xl overflow-hidden border border-purple-400/20 shadow-md flex-shrink-0 order-1 sm:order-2 cursor-pointer"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.25 }}
-              onClick={() =>
-                setSelectedImage(
-                  "/My_Data/Anirudh_Xebia_Internship_page-0001.jpg"
-                )
-              }
-            >
+            {/* Image (hidden on mobile) */}
+            <motion.div className="hidden sm:block w-full sm:w-1/3 rounded-xl overflow-hidden border border-purple-400/20 shadow-md flex-shrink-0">
               <Image
                 src="/My_Data/Anirudh_Xebia_Internship_page-0001.jpg"
                 alt="Xebia Certificate"
@@ -122,30 +117,15 @@ export const Journey: React.FC = () => {
             variants={staggerItem}
             className="flex flex-col sm:flex-row items-stretch gap-6 sm:gap-10 relative"
           >
-            {/* Image */}
-            <motion.div
-              className="w-full sm:w-1/3 rounded-xl overflow-hidden border border-cyan-400/20 shadow-md flex-shrink-0 cursor-pointer"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.25 }}
-              onClick={() => setSelectedImage("/My_Data/Uni_logo.jpg")}
-            >
-              <Image
-                src="/My_Data/Uni_logo.jpg"
-                alt="Degree"
-                width={1200}
-                height={800}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-
             {/* Content */}
             <motion.div
-              className="w-full sm:flex-1 backdrop-blur-sm border border-cyan-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col"
+              className="w-full sm:flex-1 backdrop-blur-sm border border-cyan-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col cursor-pointer"
               whileHover={{
                 scale: 1.015,
                 boxShadow: "0 12px 28px rgba(6,182,212,0.15)",
               }}
               transition={{ duration: 0.3 }}
+              onClick={() => setSelectedImage("/My_Data/Uni_logo.jpg")}
             >
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-lg sm:text-2xl font-semibold text-white">
@@ -178,6 +158,17 @@ export const Journey: React.FC = () => {
                 Comprehensive study of CS fundamentals, engineering practices
                 and modern web stacks.
               </p>
+            </motion.div>
+
+            {/* Image (hidden on mobile) */}
+            <motion.div className="hidden sm:block w-full sm:w-1/3 rounded-xl overflow-hidden border border-cyan-400/20 shadow-md flex-shrink-0">
+              <Image
+                src="/My_Data/Uni_logo.jpg"
+                alt="Degree"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </motion.div>
         </motion.div>

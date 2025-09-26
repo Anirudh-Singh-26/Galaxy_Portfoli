@@ -31,21 +31,21 @@ export const Certificates = () => {
       className="flex flex-col items-center justify-center gap-8 sm:gap-10 lg:gap-12 px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 lg:py-20"
     >
       {/* Section Heading */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-0">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
           <span className="bg-gradient-to-t from-slate-200 via-cyan-700 to-cyan-950 bg-clip-text text-transparent">
             Certificates & Achievements
           </span>
         </h2>
-        <div className="w-full max-w-[40rem] h-2 relative mx-auto mt-2 ms-10 sm:ms-[5.2rem]">
+        <div className="w-full max-w-[40rem] h-2 relative mx-auto ms-10 sm:ms-[5.2rem]">
           <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
           <div className="absolute left-1/12 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
         </div>
+        <p className="text-neutral-300 text-center mt-4 text-base sm:text-lg lg:text-xl font-semibold max-w-full sm:max-w-[600px] mx-auto">
+          A collection of milestones and recognitions that reflect dedication,
+          growth, and continuous learning.
+        </p>
       </div>
-      <p className="text-neutral-300 text-center mt-4 text-base sm:text-lg lg:text-xl font-semibold max-w-full sm:max-w-[600px] mx-auto">
-        A collection of milestones and recognitions that reflect dedication,
-        growth, and continuous learning.
-      </p>
 
       {/* BentoGrid Layout */}
       <BentoGrid className="max-w-7xl w-full gap-6 sm:gap-8 lg:gap-10">
