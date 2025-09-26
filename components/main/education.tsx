@@ -100,8 +100,8 @@ export const Journey: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Image (hidden on mobile) */}
-            <motion.div className="hidden sm:block w-full sm:w-1/3 rounded-xl overflow-hidden border border-purple-400/20 shadow-md flex-shrink-0">
+            {/* Image (hidden on mobile, order preserved) */}
+            <motion.div className="hidden sm:block w-full sm:w-1/3 rounded-xl overflow-hidden border border-purple-400/20 shadow-md flex-shrink-0 order-1 sm:order-2">
               <Image
                 src="/My_Data/Anirudh_Xebia_Internship_page-0001.jpg"
                 alt="Xebia Certificate"
@@ -117,9 +117,20 @@ export const Journey: React.FC = () => {
             variants={staggerItem}
             className="flex flex-col sm:flex-row items-stretch gap-6 sm:gap-10 relative"
           >
+            {/* Image (hidden on mobile, order preserved) */}
+            <motion.div className="hidden sm:block w-full sm:w-1/3 rounded-xl overflow-hidden border border-cyan-400/20 shadow-md flex-shrink-0 order-1 sm:order-1">
+              <Image
+                src="/My_Data/Uni_logo.jpg"
+                alt="Degree"
+                width={1200}
+                height={800}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
             {/* Content */}
             <motion.div
-              className="w-full sm:flex-1 backdrop-blur-sm border border-cyan-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col cursor-pointer"
+              className="w-full sm:flex-1 backdrop-blur-sm border border-cyan-400/10 rounded-2xl p-4 sm:p-6 shadow-lg flex flex-col order-2 sm:order-2 cursor-pointer"
               whileHover={{
                 scale: 1.015,
                 boxShadow: "0 12px 28px rgba(6,182,212,0.15)",
@@ -158,17 +169,6 @@ export const Journey: React.FC = () => {
                 Comprehensive study of CS fundamentals, engineering practices
                 and modern web stacks.
               </p>
-            </motion.div>
-
-            {/* Image (hidden on mobile) */}
-            <motion.div className="hidden sm:block w-full sm:w-1/3 rounded-xl overflow-hidden border border-cyan-400/20 shadow-md flex-shrink-0">
-              <Image
-                src="/My_Data/Uni_logo.jpg"
-                alt="Degree"
-                width={1200}
-                height={800}
-                className="w-full h-full object-cover"
-              />
             </motion.div>
           </motion.div>
         </motion.div>
