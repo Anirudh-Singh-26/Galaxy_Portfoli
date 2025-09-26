@@ -139,7 +139,7 @@ export const Highlights = () => {
       <div className="text-center grid grid-cols-3 gap-3 sm:gap-6 w-full max-w-7xl mt-6 sm:mt-10 lg:mt-12">
         <HighlightCard
           icon={<FaProjectDiagram className="text-purple-400" />}
-          title="Projects"
+          title="10+ Projects"
           description="Designed and deployed full-stack apps using modern frameworks, APIs, and databases."
           delay={0.1}
           color="purple"
@@ -148,7 +148,7 @@ export const Highlights = () => {
         />
         <HighlightCard
           icon={<FaLaptopCode className="text-cyan-400" />}
-          title="Internship"
+          title="Industry Internship"
           description="Worked remotely at Xebia (2025), contributing to scalable, production-ready solutions."
           delay={0.3}
           color="cyan"
@@ -157,7 +157,7 @@ export const Highlights = () => {
         />
         <HighlightCard
           icon={<FaUserGraduate className="text-purple-400" />}
-          title="Experience"
+          title="1+ Year of Experience"
           description="Hands-on coding, problem-solving, and building impactful projects with clean practices."
           delay={0.5}
           color="purple"
