@@ -25,6 +25,7 @@ export const ProjectsGridItem = ({
   title,
   description,
   tags,
+  extraTag, // ✅ new prop
   image,
   onClick,
 }: {
@@ -32,6 +33,7 @@ export const ProjectsGridItem = ({
   title?: string;
   description?: string;
   tags?: string[];
+  extraTag?: string; // ✅ new prop
   image?: string;
   onClick?: () => void;
 }) => {
@@ -44,7 +46,7 @@ export const ProjectsGridItem = ({
       onClick={onClick}
     >
       {image && (
-        <div className="w-full h-52 sm:h-56 md:h-60 lg:h-64 overflow-hidden">
+        <div className="w-full h-36 sm:h-40 md:h-44 lg:h-48 overflow-hidden">
           <img
             src={image}
             alt={title}
@@ -52,19 +54,19 @@ export const ProjectsGridItem = ({
           />
         </div>
       )}
-      <div className="flex-1 flex flex-col gap-2 p-4 sm:p-5">
+      <div className="flex-1 flex flex-col gap-1.5 p-3 sm:p-4">
         {title && (
           <div className="text-lg sm:text-xl font-semibold text-white">
             {title}
           </div>
         )}
         {description && (
-          <div className="text-sm sm:text-base text-neutral-300 line-clamp-3">
+          <div className="text-sm sm:text-base text-neutral-300 line-clamp-2">
             {description}
           </div>
         )}
         {tags && (
-          <div className="flex flex-wrap gap-2 mt-2">
+          <div className="flex flex-wrap gap-2 mt-1.5">
             {tags.map((tag, i) => (
               <span
                 key={i}
@@ -73,6 +75,11 @@ export const ProjectsGridItem = ({
                 {tag}
               </span>
             ))}
+            {extraTag && (
+              <span className="bg-[#251f38] text-xs sm:text-sm font-semibold text-purple-500 rounded-full px-2 py-1">
+                {extraTag}
+              </span>
+            )}
           </div>
         )}
       </div>

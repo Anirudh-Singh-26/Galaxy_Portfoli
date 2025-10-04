@@ -1,19 +1,26 @@
 /** @type {import('next').NextConfig} */
-
-module.exports = {
+const nextConfig = {
+  reactStrictMode: true,
   images: {
-    domains: [
-      "github-readme-stats.vercel.app",
-      "github-readme-streak-stats.herokuapp.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "github-readme-stats.vercel.app",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "github-readme-streak-stats.herokuapp.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
+  // Uncomment this if you want bundle analyzer later
+  // webpack(config, options) {
+  //   return config;
+  // },
 };
 
-// const withBundleAnalyzer = require("@next/bundle-analyzer")({
-//   enabled: process.env.ANALYZE === "true",
-// });
-
-// module.exports = withBundleAnalyzer({
-//   reactStrictMode: true,
-// });
-
+module.exports = nextConfig;

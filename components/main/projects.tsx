@@ -53,18 +53,24 @@ export const Projects = () => {
 
       {/* Projects Grid */}
       <ProjectsGrid>
-        {displayedProjects.map((project) => (
-          <ProjectsGridItem
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            tags={project.tags}
-            image={project.image}
-            onClick={() => handleOpenModal(project)}
-          />
-        ))}
+        {displayedProjects.map((project) => {
+          const showTags = project.tags.slice(0, 4);
+          const hasMoreTags = project.tags.length > 4;
 
-        {/* Inline placeholder card (only if all shown) */}
+          return (
+            <ProjectsGridItem
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              tags={showTags}
+              extraTag={hasMoreTags ? "View More ->" : undefined}
+              image={project.image}
+              onClick={() => handleOpenModal(project)}
+            />
+          );
+        })}
+
+        {/* Inline placeholder card */}
         {(!isMobile || visibleCount >= PROJECTS.length) && (
           <div className="flex items-center text-center justify-center rounded-2xl border-2 border-dashed border-cyan-500/40 text-white text-lg sm:text-xl font-semibold px-5 cursor-default hover:scale-105 transition-transform duration-300 md:col-span-1">
             New Projects Launching Soon!!!
@@ -98,7 +104,6 @@ export const Projects = () => {
             <div
               className="flex justify-end p-4 pb-0"
               style={{
-                /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
                 scrollbarWidth: "none",
               }}
             >
