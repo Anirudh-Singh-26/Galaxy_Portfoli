@@ -10,6 +10,7 @@ const projectUrls = [
   "https://velora-frontend-seven.vercel.app/",
   "https://mavix-frontend.vercel.app/",
   "https://zip-cart-frontend.vercel.app/",
+  "https://crowdspark-backend-72dh.onrender.com",
   // Add more project URLs here
 ];
 
