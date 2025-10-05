@@ -19,7 +19,7 @@ export const AboutMe = () => {
       initial="hidden"
       whileInView="visible"
       viewport={viewportSettings}
-      className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 md:gap-10 lg:gap-12 px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 lg:py-20"
+      className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 md:gap-10 lg:gap-12 px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:pt-16 lg:pt-20"
     >
       {/* Left Side Image */}
       <motion.div
@@ -40,7 +40,7 @@ export const AboutMe = () => {
             className="w-full h-full"
           >
             <Image
-              src="/Me.jpg"
+              src="/Me (1).jpg"
               alt="About Me"
               width={420}
               height={480}

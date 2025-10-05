@@ -110,7 +110,7 @@ export const Highlights = () => {
       initial="hidden"
       whileInView="visible"
       viewport={viewportSettings}
-      className="flex flex-col items-center justify-center px-2 sm:px-6 md:px-12 lg:px-20 pt-12 sm:pt-16 lg:pt-20"
+      className="flex flex-col items-center justify-center px-2 sm:px-6 md:px-12 lg:px-20  sm:pt-16 lg:pt-2"
     >
       <motion.h2
         variants={slideInFromLeft(0.5)}

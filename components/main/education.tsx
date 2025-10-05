@@ -26,7 +26,7 @@ export const Journey: React.FC = () => {
         >
           <div className="w-full flex flex-col items-center justify-center overflow-hidden rounded-md text-center">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-              <span className="bg-gradient-to-t from-slate-100 via-cyan-600 to-cyan-950 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-t from-indigo-400 via-fuchsia-400 to-pink-500 bg-clip-text text-transparent">
                 My Journey
               </span>
             </h2>

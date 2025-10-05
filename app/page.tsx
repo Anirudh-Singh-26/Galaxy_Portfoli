@@ -10,6 +10,9 @@ import { Certificates } from "@/components/main/certificates";
 import { Contact } from "@/components/main/contact";
 import { Highlights } from "@/components/main/quick-stats";
 import { WarmupProjects } from "@/components/main/WarmupProjects";
+import Marquee from "@/components/Marquee";
+import MarqueeP from "@/components/MarqueeP";
+
 
 
 export default function Home() {
@@ -30,8 +33,10 @@ export default function Home() {
           <AboutMe />
         </section>
 
+        <MarqueeP />
+
         {/* 3. Highlights / Quick Stats */}
-        <section className="w-full max-w-7xl px-4 sm:px-6 md:px-12 lg:px-20 pb-6 sm:py-16 lg:pt-12 pb-6">
+        <section className="w-full max-w-7xl px-4 sm:px-6 md:px-12 lg:px-20 pb-6 sm:pb-16 lg:pt-1 pb-6">
           <Highlights />
         </section>
 
@@ -41,22 +46,24 @@ export default function Home() {
         </section>
 
         {/* 6. Education */}
-        <section className="w-full max-w-7xl px-4 sm:px-6 md:px-12 lg:px-20 sm:py-16 lg:py-20">
+        <section className="w-full max-w-7xl px-4 sm:px-6 md:px-12 lg:px-20 sm:pb-16 lg:pb-10">
           <Journey />
         </section>
 
         {/* 7. Certificates */}
-        <section className="w-full max-w-7xl px-8 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 lg:py-20">
+        <section className="w-full max-w-7xl px-8 sm:px-6 md:px-12 lg:px-20 py-12 sm:pb-16 lg:pb-20">
           <Certificates />
         </section>
 
         {/* 8. Projects */}
-        <section className="w-full max-w-7xl px-8 sm:px-6 md:px-12 lg:px-20   sm:py-16 lg:py-20">
+        <section className="w-full max-w-7xl px-8 sm:px-6 md:px-12 lg:px-20   sm:pt-16 lg:pt-20">
           <Projects />
         </section>
 
+        <Marquee />
+
         {/* 10. Contact */}
-        <section className="w-full max-w-7xl px-4 sm:px-6 md:px-12 mb-5 lg:px-20 py-0 sm:py-16 lg:py-20">
+        <section className="w-full max-w-7xl px-4 sm:px-6 md:px-12 mb-5 lg:px-20 pb-0 sm:pb-16 lg:pb-20">
           <Contact />
         </section>
       </div>

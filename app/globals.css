@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+@keyframes blinkFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+
+
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }

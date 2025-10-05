@@ -44,7 +44,7 @@ export const Contact = () => {
       >
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white">
-            <span className="bg-gradient-to-t from-slate-200 via-cyan-700 to-cyan-950 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-t from-indigo-400 via-fuchsia-400 to-pink-500 bg-clip-text text-transparent">
               Let’s Connect
             </span>
           </h2>

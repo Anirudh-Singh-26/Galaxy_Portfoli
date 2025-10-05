@@ -4,6 +4,7 @@
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import TextType from "../ui/TextType";
 import {
   slideInFromLeft,
   slideInFromRight,
@@ -54,7 +55,12 @@ export const Hero = () => {
         {/* Hero Heading */}
         <motion.h1
           variants={slideInFromLeft(0.5)}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white max-w-full md:max-w-[600px] leading-tight"
+          style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: "600", // slightly bolder for headings
+            fontStyle: "normal",
+          }}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white max-w-full md:max-w-[700px] leading-tight"
         >
           <motion.span
             initial={{ opacity: 0, x: -20 }}
@@ -62,15 +68,15 @@ export const Hero = () => {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="bg-white bg-clip-text text-transparent"
           >
-            Transforming{" "}
+            I Turn Ideas{" "}
           </motion.span>
           <motion.span
-            className="bg-gradient-to-tr from-green-300 via-sky-200 to-indigo-100 bg-clip-text text-transparent"
+            className="bg-gradient-to-tr from-purple-400 via-pink-400 to-indigo-300 bg-clip-text text-transparent"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            Ideas
+            into
           </motion.span>
           <motion.span
             initial={{ opacity: 0, x: 20 }}
@@ -79,15 +85,27 @@ export const Hero = () => {
             className="bg-white bg-clip-text text-transparent"
           >
             {" "}
-            into Seamless User{" "}
+            Digital Masterpieces with{"  "}
           </motion.span>
           <motion.span
-            className="bg-white bg-clip-text text-transparent"
+            className="bg-gradient-to-tr from-purple-400 via-pink-400 to-indigo-300 purple bg-clip-text text-transparent inline-block whitespace-nowrap min-w-[10ch]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
           >
-            Experiences
+            <TextType
+              text={[
+                "Web Apps",
+                "APIs",
+                "Dashboards",
+                "Projects",
+                "Interfaces",
+                "Tools",
+                "Solutions",
+                "Experiences",
+              ]}
+              className="bg-gradient-to-tr from-purple-400 via-pink-400 to-indigo-300 bg-clip-text text-transparent"
+            />
           </motion.span>
         </motion.h1>
 
@@ -96,8 +114,9 @@ export const Hero = () => {
           variants={slideInFromLeft(0.8)}
           className="text-sm px-5 sm:text-base lg:text-lg text-gray-400 my-3 sm:my-4 max-w-full md:max-w-[500px] mx-auto md:mx-0"
         >
-          I&apos;m a Full Stack Software Engineer specializing in building
-          modern web applications. Check out my projects and skills.
+          I&apos;m a full-stack developer building modern web applications,
+          leveraging the MERN stack and DevOps tools like CI/CD and Docker to
+          deliver seamless, scalable, and impactful digital experiences.
         </motion.p>
 
         {/* Call-to-Action Buttons */}
