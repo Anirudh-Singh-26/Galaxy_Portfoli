@@ -56,7 +56,7 @@ export default function Home() {
         </section>
 
         {/* 8. Projects */}
-        <section className="w-full max-w-7xl px-8 sm:px-6 md:px-12 lg:px-20   sm:pt-16 lg:pt-20">
+        <section className="w-full max-w-7xl px-8 sm:px-6 md:px-12 lg:px-20   sm:pt-16 lg:pt-1">
           <Projects />
         </section>
 

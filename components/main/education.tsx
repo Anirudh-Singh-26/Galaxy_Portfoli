@@ -16,7 +16,7 @@ export const Journey: React.FC = () => {
         initial="hidden"
         whileInView="visible"
         viewport={viewportSettings}
-        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 lg:py-20"
+        className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-16 lg:py-1"
         id="journey"
       >
         {/* Section heading */}

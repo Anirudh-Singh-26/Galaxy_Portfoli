@@ -10,7 +10,7 @@ type SkillDataProviderProps = {
   width: number;
   height: number;
   index: number;
-  className?: string; // 👈 for per-skill adjustments
+  className?: string; // for per-skill adjustments
 };
 
 export const SkillDataProvider = ({
@@ -40,8 +40,15 @@ export const SkillDataProvider = ({
       animate={inView ? "visible" : "hidden"}
       custom={index}
       transition={{ delay: index * animationDelay, duration: 0.4 }}
-      whileHover={{ scale: 1.1 }} // 👈 interactive hover
-      className={`flex flex-col items-center justify-center w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 ${
+      whileHover={{
+        scale: 1.15,
+        transition: {
+          type: "spring",
+          stiffness: 500,
+          damping: 15,
+        },
+      }}
+      className={`group flex flex-col items-center justify-center w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 ${
         className ?? ""
       }`}
     >
@@ -54,7 +61,7 @@ export const SkillDataProvider = ({
           className="object-contain w-full h-full"
         />
       </div>
-      <p className="text-xs sm:text-xs md:text-xs text-white mt-1 text-center leading-tight max-w-full truncate">
+      <p className="text-xs sm:text-xs md:text-xs text-white mt-1 text-center leading-tight max-w-full truncate group-hover:text-cyan-400 transition-colors  duration-300">
         {name}
       </p>
     </motion.div>
