@@ -134,7 +134,7 @@ export const Hero = () => {
 
           <motion.a
             // href="/My_Data/Anirudh_Singh_Rathore_FullStack-Dev.pdf"
-            href="https://drive.google.com/file/d/1olno8YmJ1SPUtX733ljCkm2Zc4Y7_ah7/view?usp=sharing"
+            href="https://drive.google.com/file/d/112RH_AWcZIJ-E1707Dzx45DrPEsniI1d/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             {...buttonHover}

@@ -40,7 +40,7 @@ export const AboutMe = () => {
             className="w-full h-full"
           >
             <Image
-              src="/Me (1).jpg"
+              src="/Ani.jpeg"
               alt="About Me"
               width={420}
               height={480}
